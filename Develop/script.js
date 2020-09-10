@@ -14,32 +14,51 @@ var selections = [];
 function writePassword() {
   var password = generatePassword();
 
+  while (choiceLowercase !== null) {
+
   choiceLowercase = prompt("Do you wish to include lowercase letters? Answer 'yes' or 'no'.");
   choiceLowercase = choiceLowercase.toLowerCase();
 
-  if ((choiceLowercase !== "yes") && (choiceLowercase !== "no")); {
+    if ((choiceLowercase !== "yes") && (choiceLowercase !== "no")); {
       alert("That is not a valid option."); }
 
-  if (choiceLowercase === "yes") {
+    if (choiceLowercase === "yes") {
       selections.push(lowercase);
       alert("Ok. We will include lowercase letters.");}
 
-  if (choiceLowercase === "no") 
-    alert("Ok. We will not include lowercase letters.");
-  }
+    else (choiceLowercase === "no") 
+      alert("Ok. We will not include lowercase letters.");
+    }
 
-  choiceUppercase = prompt("Do you wish to include uppercase letters? Answer 'yes' or 'no'.");
-  choiceUppercase = choiceUppercase.toLowerCase();
+    while (choiceUppercase !== null) {  
 
-  if (!(choiceUppercase !== "yes") && !(choiceUppercase !== "no")); {
-      alert("That is not a valid option."); }
+    choiceUppercase = prompt("Do you wish to include uppercase letters? Answer 'yes' or 'no'.");
+    choiceUppercase = choiceUppercase.toLowerCase();
+  
+      if (choiceUppercase == "yes") {
+        selections.push(uppercase);
+        alert("Ok. We will include uppercase letters.");}
+  
+      if (choiceUppercase == "no") 
+        alert("Ok. We will not include uppercase letters.");
+  
+      else 
+       alert("That is not a valid option.")
+      }    
 
-  if (choiceUppercase == "yes") {
-      selections.push(uppercase);
-      alert("Ok. We will include uppercase letters.");}
-
-  if (choiceUppercase == "no") 
-    alert("Ok. We will not include uppercase letters.");
+      while (choiceNumber !== null) {  
+    choiceNumber = prompt("Do you wish to include numbers? Answer 'yes' or 'no'.");
+    
+      if (choiceNumber == "yes") {
+          selections.push(numbers);
+          alert("Ok. We will include numbers.");}
+    
+      if (choiceNumber == "no") 
+        alert("Ok. We will not include numbers.");
+    
+      else 
+        alert("That is not a valid option.")
+      }  
   
 
 
@@ -68,8 +87,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-//loop for making password itself
-
-for (var i = 0; i < choiceCharacters; i++);
