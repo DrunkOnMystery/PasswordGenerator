@@ -5,41 +5,65 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-var selections = [];
+var combinedArray = [];
+var passwordArray
 
 var numberofChars
 
-var userSelections = {
-      includeLowercase : false,
-      includeUppercase : false,
-      includeNumbers : false,
-      includeSymbols : false,
-}  
+var confirmLowerCase
+var confirmUpperCase
+var confirmNumbers
+var confirmSymbols
 
 function generatePassword () {
 
-  var charNumber = prompt("How many characters would you like?");
+  var charNumber = prompt("How many characters would you like your password to include?");
 
-  confirm("Should we include lowercase letters?"); 
-          this.includeLowercase = true;
-          selections.push(lowercase);
-          console.log("Lowercase: " + userOptions.includeLowercase);
+    if (charNumber < 8) {
+        alert("Your password must be at least 8 characters")
+        return "Try again"}
+    
+    if (charNumber > 128){
+        alert("Your password cannot exceed 128 characters")
+        return "Try again"}
 
-  confirm("Should we include uppercase letters?");
-      if (this.includeUppercase = true)
-          selections.push(uppercase);
-          console.log("Uppercase: " + userOptions.includeUppercase);
+  confirmLowerCase = confirm("Should we include lowercase letters?");
 
-  confirm("Should we include numbers?");
-      if (this.includeNumbers = true)
-          selections.push(numbers);
-          console.log("Numbers: " + userOptions.includeNumbers);
+  if (confirmLowerCase) {
+    for (var i = 0; i < lowercase.length; i++) {
+    combinedArray.push(lowercase); }
+  } 
 
-  confirm("Should we include symbols?");
-      if (this.includesymbols = true)
-         selections.push(symbols);
-         console.log("Symbols: " + userOptions.includeSymbols)
-}
+  confirmUpperCase = confirm("Should we include uppercase letters?");
+
+  if (confirmUpperCase) {
+    for (var j = 0; j < uppercase.length; j++) {
+    combinedArray.push(uppercase); }
+  } 
+
+  confirmNumbers = confirm("Should we include numbers?");
+
+  if (confirmNumbers) {
+    for (var k = 0; k < numbers.length; k++) {
+    combinedArray.push(numbers); }
+  } 
+  confirmSymbols = confirm("Should we include symbols?");
+
+  if (confirmSymbols) {
+    for (var l = 0; l < symbols.length; l++) {
+    combinedArray.push(symbols); }
+  } 
+
+  console.log(confirmLowerCase);
+  console.log(confirmUpperCase);
+  console.log(confirmNumbers);
+  console.log(confirmSymbols);
+
+        for (var m = 0; m < charNumber; m++) 
+  passwordArray.push(combinedArray[Math.floor(Math.random()*combinedArray.length)]);
+         }
+
+         console.log(passwordArray)
 
 // Write password to the #password input
 
