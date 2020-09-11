@@ -22,12 +22,16 @@ function generatePassword () {
 //User prompt for number of characters
   var charNumber = prompt("How many characters would you like your password to include?");
 
+    if (isNaN(charNumber)) {
+        alert("Your password must be a number.")
+        return "Try again"}
+
     if (charNumber < 8) {
-        alert("Your password must be at least 8 characters")
+        alert("Your password must be at least 8 characters.")
         return "Try again"}
     
     if (charNumber > 128){
-        alert("Your password cannot exceed 128 characters")
+        alert("Your password cannot exceed 128 characters.")
         return "Try again"}
 //User prompts for what to include in the password, and command to push those arrays into the first empty array 
   confirmLowerCase = confirm("Should we include lowercase letters?");
