@@ -6,9 +6,7 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 var combinedArray = [];
-var passwordArray
-
-var numberofChars
+var randomArray = [];
 
 var confirmLowerCase
 var confirmUpperCase
@@ -31,39 +29,35 @@ function generatePassword () {
 
   if (confirmLowerCase) {
     for (var i = 0; i < lowercase.length; i++) {
-    combinedArray.push(lowercase); }
+    combinedArray.push(lowercase[i]); }
   } 
 
   confirmUpperCase = confirm("Should we include uppercase letters?");
 
   if (confirmUpperCase) {
     for (var j = 0; j < uppercase.length; j++) {
-    combinedArray.push(uppercase); }
+    combinedArray.push(uppercase[j]); }
   } 
 
   confirmNumbers = confirm("Should we include numbers?");
 
   if (confirmNumbers) {
     for (var k = 0; k < numbers.length; k++) {
-    combinedArray.push(numbers); }
+    combinedArray.push(numbers[k]); }
   } 
   confirmSymbols = confirm("Should we include symbols?");
 
   if (confirmSymbols) {
     for (var l = 0; l < symbols.length; l++) {
-    combinedArray.push(symbols); }
+    combinedArray.push(symbols[l]); }
   } 
 
-  console.log(confirmLowerCase);
-  console.log(confirmUpperCase);
-  console.log(confirmNumbers);
-  console.log(confirmSymbols);
+  for (var m = 0; m < charNumber; m++) 
+    randomArray.push(combinedArray[Math.floor(Math.random()*combinedArray.length)]);
 
-        for (var m = 0; m < charNumber; m++) 
-  passwordArray.push(combinedArray[Math.floor(Math.random()*combinedArray.length)]);
-         }
-
-         console.log(passwordArray)
+    result = randomArray.join("");
+    return result
+}
 
 // Write password to the #password input
 
