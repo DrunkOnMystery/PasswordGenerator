@@ -15,6 +15,9 @@ var confirmSymbols
 
 function generatePassword () {
 
+  combinedArray = [];
+  randomArray = [];
+
   var charNumber = prompt("How many characters would you like your password to include?");
 
     if (charNumber < 8) {
