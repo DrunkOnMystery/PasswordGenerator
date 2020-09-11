@@ -1,31 +1,39 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var selections = {
-    includeLowercase : false,
-    includeUppercase : false,
-    includeNumbers : false,
-    includeSymbols : false,
-}
 
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var symbol = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+var symbols = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+var selections = [];
 
+var userOptions = {
+      includeLowercase : false,
+      includeUppercase : false,
+      includeNumbers : false,
+      includeSymbols : false,
 
-var lowercaseChoice = confirm("Should we include lowercase letters?") 
+    userInputs: function () {
+      var lowercaseChoice = confirm("Should we include lowercase letters?") 
 
-    if (this.includeLowercase = true)
-    
-var uppercaseChoice = confirm("Should we include uppercase letters?")
-    if (this.includeUppercase = true)
+      if (this.includeLowercase = true)
+          selections.push(lowercase)
 
-var numbersChoice = confirm("Should we include numbers?")
-    if (this.includeNumbers = true)
+      var uppercaseChoice = confirm("Should we include uppercase letters?")
+      if (this.includeUppercase = true)
+          selections.push(uppercase)
 
-var symbolsChoice = confirm("Should we include symbols?")
-    if (this.includesymbols = true)
+      var numbersChoice = confirm("Should we include numbers?")
+      if (this.includeNumbers = true)
+          selections.push(numbers)
+
+      var symbolsChoice = confirm("Should we include symbols?")
+      if (this.includesymbols = true)
+         selections.push(symbols) 
+    }
+  }
+
 
 // Write password to the #password input
 
